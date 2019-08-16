@@ -29,11 +29,18 @@
         utilities: [
           {
             author: 'John Moore',
-            code: "\r\n \/**\r\n * This is a function to get cookies.\r\n *\r\n * @param {string} name - A string param\r\n * @return {string} A good string\r\n *\r\n * @example\r\n *\r\n * getCookie('viewed')\r\n *\/\r\n\r\nexport function getCookie(name) {\r\n  const cookies = {}\r\n  const cookieSet = document.cookie.split('; ');\r\n  cookieSet.forEach(cookie => cookies[cookie.split('=')[0]] = cookie.split('=')[1]);\r\n\r\n  return cookies[name];\r\n};",
+            code: "\r\nfunction getCookie(name) {\r\n  const cookies = {}\r\n  const cookieSet = document.cookie.split('; ');\r\n  cookieSet.forEach(cookie => cookies[cookie.split('=')[0]] = cookie.split('=')[1]);\r\n\r\n  return cookies[name];\r\n};\r\n\r\ngetCookie('viewed') \/\/ true",
             description: 'Utility function for getting browser cookies',
             github: 'https://github.com/ghlost',
             id: 'get-cookies',
             title: 'Get Cookies'
+          },
+          {
+            author: 'Ben Kim',
+            code: "\r\n\/\/ ie11 safe\/fallback\r\nvar getParams = function (url) {\r\n\tvar params = {};\r\n\tvar parser = document.createElement('a');\r\n\tparser.href = url;\r\n\tvar query = parser.search.substring(1);\r\n\tvar vars = query.split('&');\r\n\tfor (var i = 0; i < vars.length; i++) {\r\n\t\tvar pair = vars[i].split('=');\r\n\t\tparams[pair[0]] = decodeURIComponent(pair[1]);\r\n\t}\r\n\treturn params;\r\n};\r\n\r\ngetParams(location.href).test; \/\/ George\r\n\r\n\/\/ new way, no ie11 support\r\nconst params = new URLSearchParams(location.search);  \r\n\r\nparams.has('firstname');  \/\/ true\r\nparams.get('firstname');    \/\/ George\r\nparams.getAll('firstname'); \/\/ [\"George\"]\r\nparams.toString();   \/\/ firstname=George",
+            github: 'https://github.com/benkimo6i',
+            id: 'url-query-params',
+            title: 'URL Query Params Functions'
           }
         ]
       }
