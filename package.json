@@ -1,0 +1,17 @@
+{
+  "name": "js-utilities",
+  "version": "1.0.0",
+  "description": "Resource for common utility functions in vanilla js",
+  "author": "Ben Kim",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
