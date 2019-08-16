@@ -1,7 +1,7 @@
 <template>
   <div>
-    <n-link :key="link.id" v-for="link in links" :to="`/utilities/${link.id}`">
-      <p>{{ link.title }}</p>
+    <n-link class="site-link" :key="link.id" v-for="link in links" :to="`/utilities/${link.id}`">
+      <h3>{{ link.title }}</h3>
       <p>{{ link.author }}</p>
     </n-link>
   </div>
@@ -13,9 +13,9 @@
       return {
         links: [
           {
-            author: '/images/a-wright.png',
-            id: 'anderson-wright',
-            title: 'Anderson Wright'
+            author: 'John Moore',
+            id: 'get-cookies',
+            title: 'Get Cookies'
           }
         ]
       }
